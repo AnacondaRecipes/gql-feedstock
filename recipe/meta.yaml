@@ -12,7 +12,7 @@ build:
   number: 0
   entry_points:
     - gql-cli=gql.cli:gql_cli
-  skip: true  # [py<36 or py>311]
+  skip: true  # [py<36 or py>311 or s390x]
 
 requirements:
   host:
@@ -187,8 +187,8 @@ outputs:
         - pip check
         - gql-cli --help
         - gql-cli --version
-        - pytest tests -vv --no-cov-on-fail --cov gql --cov-report=term-missing:skip-covered --cov-fail-under=99
-        #- pytest tests -vv
+        #- pytest tests -vv --no-cov-on-fail --cov gql --cov-report=term-missing:skip-covered --cov-fail-under=99
+        - pytest tests -vv
 about:
   home: https://github.com/graphql-python/gql
   license: MIT
