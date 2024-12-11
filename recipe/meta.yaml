@@ -9,7 +9,7 @@ source:
   sha256: ccb9c5db543682b28f577069950488218ed65d4ac70bb03b6929aaadaf636de9
 
 build:
-  number: 1
+  number: 0
   skip: true  # [py<36 or s390x]
 
 requirements:
