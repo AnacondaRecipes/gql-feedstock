@@ -26,13 +26,14 @@ test:
 outputs:
   - name: gql
     build:
-      script: {{ PYTHON }} -m pip install . -vv --no-deps
+      script: {{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation
       entry_points:
         - gql-cli=gql.cli:gql_cli
     requirements:
       host:
         - python
         - pip
+        - wheel
       run:
         - python
         - graphql-core >=3.2,<3.3
@@ -66,6 +67,7 @@ outputs:
       host:
         - python
         - pip
+        - wheel
       run:
         - {{ pin_subpackage('gql', exact=True) }}
         - aiohttp
@@ -114,6 +116,7 @@ outputs:
       host:
         - python
         - pip
+        - wheel
       run:
         - {{ pin_subpackage('gql', exact=True) }}
         - python
@@ -160,6 +163,7 @@ outputs:
       host:
         - python
         - pip
+        - wheel
       run:
         - {{ pin_subpackage('gql-with-aiohttp', exact=True) }}
         - {{ pin_subpackage('gql-with-botocore', exact=True) }}
@@ -196,6 +200,8 @@ about:
     This is a GraphQL client for Python. Plays nicely with graphene,
     graphql-core, graphql-js and any other GraphQL implementation compatible
     with the spec.
+  docs_url: https://gql.readthedocs.io/en/stable/
+  dev_url: https://github.com/graphql-python/gql
 extra:
   feedstock-name: gql
   recipe-maintainers:
