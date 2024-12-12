@@ -96,7 +96,6 @@ outputs:
 
   - name: gql-with-httpx
     build:
-      noarch: python
     requirements:
       host:
         - python
