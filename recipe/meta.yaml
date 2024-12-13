@@ -213,6 +213,12 @@ outputs:
         - {{ pin_subpackage('gql', exact=True) }}
         - python
     test:
+      - gql
+      - gql.transport.httpx
+      - gql.transport.aiohttp
+      - gql.transport.requests
+      - gql.transport.appsync_auth
+      - gql.transport.websockets
       source_files:
         - tests
       requires:
