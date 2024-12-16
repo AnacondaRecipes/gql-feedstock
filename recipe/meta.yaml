@@ -233,12 +233,6 @@ outputs:
         - pip check
         - gql-cli --help
         - gql-cli --version
-        - gql
-        - gql.transport.httpx
-        - gql.transport.aiohttp
-        - gql.transport.requests
-        - gql.transport.appsync_auth
-        - gql.transport.websockets
         - pytest tests -vv  # [not win]
         # test is inconsistent and times out on CI
         - pytest tests -vv -k "(not test_graphqlws_subscription_reconnecting_session)"  # [win]
