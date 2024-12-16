@@ -24,8 +24,9 @@ requirements:
 
 outputs:
   - name: gql
+    script: build_base.sh   # [not win]
+    script: build_base.bat  # [win]
     build:
-      script: {{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation
       entry_points:
         - gql-cli=gql.cli:gql_cli
     requirements:
@@ -65,7 +66,6 @@ outputs:
         - gql-cli --version
 
   - name: gql-with-aiohttp
-    build:
     requirements:
       host:
         - python
@@ -91,7 +91,6 @@ outputs:
       summary: GraphQL client for Python - aiohttp transport
 
   - name: gql-with-httpx
-    build:
     requirements:
       host:
         - python
@@ -116,7 +115,6 @@ outputs:
       summary: GraphQL client for Python - httpx transport
 
   - name: gql-with-requests
-    build:
     requirements:
       host:
         - python
@@ -143,7 +141,6 @@ outputs:
       summary: GraphQL client for Python - requests transport
 
   - name: gql-with-websockets
-    build:
     requirements:
       host:
         - python
@@ -168,7 +165,6 @@ outputs:
       summary: GraphQL client for Python - websocket transport
 
   - name: gql-with-botocore
-    build:
     requirements:
       host:
         - python
@@ -193,7 +189,6 @@ outputs:
       summary: GraphQL client for Python - boto transport
 
   - name: gql-with-all
-    build:
     requirements:
       host:
         - python
