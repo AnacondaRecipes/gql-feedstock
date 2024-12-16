@@ -24,8 +24,8 @@ requirements:
 
 outputs:
   - name: gql
+    script: {{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation
     build:
-      script: {{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation
       entry_points:
         - gql-cli=gql.cli:gql_cli
     requirements:
