@@ -2,12 +2,11 @@ anaconda_config_version: 1
 upstream_sources:
   - pypi:
       identifier: gql
-      packages: &id001
-        - gql
-        - gql-with-aiohttp
-        - gql-with-all
-        - gql-with-botocore
-        - gql-with-httpx
-        - gql-with-requests
-        - gql-with-websockets
-    packages: *id001
+    packages:
+      - gql
+      - gql-with-aiohttp
+      - gql-with-all
+      - gql-with-botocore
+      - gql-with-httpx
+      - gql-with-requests
+      - gql-with-websockets
